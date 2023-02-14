@@ -1,12 +1,12 @@
-nome_do_projeto=$1
+project_name=$1
 create_project() {
-  [[ $nome_do_projeto ]] || read -p "Nome do projeto: " nome_do_projeto
-  django-admin startproject $nome_do_projeto
+  [[ $project_name ]] || read -p "Nome do projeto: " project_name
+  django-admin startproject $project_name
 }
 
 create_app() {
-  read -p "Nome do app: " nome_do_app
-  cd $nome_do_projeto
-  python manage.py startapp $nome_do_app
+  read -p "Nome do app: " app_name
+  cd $project_name
+  python manage.py startapp $app_name
   cd ..
 }

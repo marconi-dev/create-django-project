@@ -11,18 +11,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framwork',
     
-    #${nome_do_app^}
-    '${nome_do_app}.apps.${nome_do_app^}Config',
+    #${app_name^}
+    '${app_name}.apps.${app_name^}Config',
 ]"
 }
 
 rootconf() {
-  echo -e "\n\nROOT_URLCONF = '$nome_do_projeto.urls'"
+  echo -e "\n\nROOT_URLCONF = '$project_name.urls'"
 }
 
 wsgiconfig() {
   echo -e "
-WSGI_APPLICATION = '$nome_do_projeto.wsgi.application'
+WSGI_APPLICATION = '$project_name.wsgi.application'
 "
 }
 
@@ -33,15 +33,15 @@ set_settings() {
   settingsFile[2]=~/bin/django-scripts/modules/settings/settings03.txt
   settingsFile[3]=~/bin/django-scripts/modules/settings/settings04.txt
 
-  cd $nome_do_projeto
+  cd $project_name
 
-  cat ${settingsFile[0]}  > $nome_do_projeto/settings.py
-  instaled_apps          >> $nome_do_projeto/settings.py
-  cat ${settingsFile[1]} >> $nome_do_projeto/settings.py
-  rootconf               >> $nome_do_projeto/settings.py
-  cat ${settingsFile[2]} >> $nome_do_projeto/settings.py
-  wsgiconfig             >> $nome_do_projeto/settings.py
-  cat ${settingsFile[3]} >> $nome_do_projeto/settings.py
+  cat ${settingsFile[0]}  > $project_name/settings.py
+  instaled_apps          >> $project_name/settings.py
+  cat ${settingsFile[1]} >> $project_name/settings.py
+  rootconf               >> $project_name/settings.py
+  cat ${settingsFile[2]} >> $project_name/settings.py
+  wsgiconfig             >> $project_name/settings.py
+  cat ${settingsFile[3]} >> $project_name/settings.py
 
   cd ..
 }

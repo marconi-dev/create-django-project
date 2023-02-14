@@ -10,13 +10,12 @@
 # Uso: create-django-project 
 # ------------------------------------------------------------
 clear 
-
 source ~/bin/django-scripts/modules/set_django_enviroment.mod.sh #set_module
 source ~/bin/django-scripts/modules/create.mod.sh                #create
 source ~/bin/django-scripts/modules/settings.mod.sh              #settings
-
 
 set_and_active_django_enviroment #set_module
 create_project                   #create
 create_app                       #create
 set_settings                     #settings
+add_models                       #models
